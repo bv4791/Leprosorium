@@ -10,6 +10,17 @@
 <br/>
 <h4>Coments:</h4>
 
+<% @comments.each do |comment| %>
+	<p>
+		<%= comment[ 'content'] %>
+		<br/>
+		<br/>
+		<span style="front-size: 75%; color: #999" > Added at <%= comment['created_date'] %></span>
+	
+	</p>
+	<hr/>
+<% end %>
+
 <p>
 	<form action="/details/<%= @row['id'] %>" method="POST" role="forms">
 	<textarea name="content" 
